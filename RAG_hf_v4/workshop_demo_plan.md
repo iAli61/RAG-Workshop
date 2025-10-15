@@ -6,6 +6,70 @@ This development plan outlines a progressive series of hands-on demonstrations f
 
 ---
 
+## **Recommended Hugging Face Resources for RAG Workshop**
+
+### **Embedding Models (Alternative to Azure OpenAI)**
+- **sentence-transformers/all-MiniLM-L6-v2** (114.5M downloads) - Fast, efficient embeddings
+  - Link: https://hf.co/sentence-transformers/all-MiniLM-L6-v2
+- **sentence-transformers/all-mpnet-base-v2** (17.7M downloads) - Higher quality embeddings
+  - Link: https://hf.co/sentence-transformers/all-mpnet-base-v2
+- **BAAI/bge-base-en-v1.5** (5M downloads) - Strong performance on MTEB benchmark
+  - Link: https://hf.co/BAAI/bge-base-en-v1.5
+- **BAAI/bge-m3** (6M downloads) - Multilingual, supports hybrid search with dense/sparse vectors
+  - Link: https://hf.co/BAAI/bge-m3
+- **jinaai/jina-embeddings-v3** (5.3M downloads) - Multilingual, long context support
+  - Link: https://hf.co/jinaai/jina-embeddings-v3
+
+### **Cross-Encoder Reranking Models**
+- **cross-encoder/ms-marco-MiniLM-L6-v2** (4.9M downloads) - Most popular reranker
+  - Link: https://hf.co/cross-encoder/ms-marco-MiniLM-L6-v2
+- **BAAI/bge-reranker-v2-m3** (2.6M downloads) - Multilingual reranking
+  - Link: https://hf.co/BAAI/bge-reranker-v2-m3
+- **jinaai/jina-reranker-v2-base-multilingual** (1.1M downloads)
+  - Link: https://hf.co/jinaai/jina-reranker-v2-base-multilingual
+- **Qwen/Qwen3-Reranker-0.6B** (930.5K downloads) - Efficient, modern architecture
+  - Link: https://hf.co/Qwen/Qwen3-Reranker-0.6B
+
+### **Key Research Papers**
+1. **HyDE - Precise Zero-Shot Dense Retrieval** (2212.10496)
+   - Original HyDE paper demonstrating hypothetical document embeddings
+   - Link: https://hf.co/papers/2212.10496
+
+2. **MultiHop-RAG Benchmark** (2401.15391)
+   - Dataset and evaluation for multi-hop reasoning in RAG systems
+   - Link: https://hf.co/papers/2401.15391
+
+3. **Agentic RAG Survey** (2501.09136)
+   - Comprehensive survey on autonomous agents in RAG pipelines
+   - Link: https://hf.co/papers/2501.09136
+
+4. **RAG Comprehensive Survey** (2409.14924)
+   - Taxonomy of RAG approaches with integration strategies
+   - Link: https://hf.co/papers/2409.14924
+
+5. **ARAGOG: Advanced RAG Output Grading** (2404.01037)
+   - Evaluation of HyDE, reranking, and MMR effectiveness
+   - Link: https://hf.co/papers/2404.01037
+
+6. **Is Semantic Chunking Worth It?** (2410.13070)
+   - Critical analysis of chunking strategies and performance
+   - Link: https://hf.co/papers/2410.13070
+
+7. **Late Chunking** (2409.04701)
+   - Novel contextual chunk embeddings using long-context models
+   - Link: https://hf.co/papers/2409.04701
+
+8. **Rethinking Chunk Size** (2505.21700)
+   - Multi-dataset analysis of optimal chunk sizes (64-1024 tokens)
+   - Link: https://hf.co/papers/2505.21700
+
+### **Hugging Face Documentation**
+- **RAG Implementation Guide**: https://huggingface.co/docs/transformers/chat_extras
+- **Sentence Transformers Hub**: https://huggingface.co/docs/hub/sentence-transformers
+- **RAG Model Documentation**: https://huggingface.co/docs/transformers/model_doc/rag
+
+---
+
 ## **Demo #1: HyDE (Hypothetical Document Embeddings) - Query Enhancement**
 
 * **Objective**: Demonstrate how generating a hypothetical answer document before retrieval can dramatically improve semantic matching between queries and documents.
@@ -45,6 +109,16 @@ This development plan outlines a progressive series of hands-on demonstrations f
 
 * **Relevant Citation(s)**:
   - HyDE technique as described in the curriculum (Section: Pre-Retrieval Optimization, reference #32: "Advanced RAG: Improving Retrieval-Augmented Generation with Hypothetical Document Embeddings (HyDE)")
+
+* **Recommended HF Resources for Demo #1**:
+  - **Paper**: "Precise Zero-Shot Dense Retrieval without Relevance Labels" (HyDE original paper)
+    - Link: https://hf.co/papers/2212.10496
+  - **Paper**: "ARAGOG: Advanced RAG Output Grading" - Evaluates HyDE effectiveness
+    - Link: https://hf.co/papers/2404.01037
+  - **Embedding Model**: sentence-transformers/all-MiniLM-L6-v2 for fast prototyping
+    - Link: https://hf.co/sentence-transformers/all-MiniLM-L6-v2
+  - **Embedding Model**: BAAI/bge-base-en-v1.5 for better accuracy
+    - Link: https://hf.co/BAAI/bge-base-en-v1.5
 
 ---
 
@@ -86,6 +160,17 @@ This development plan outlines a progressive series of hands-on demonstrations f
 
 * **Relevant Citation(s)**:
   - Sub-Query Decomposition technique (Section: Pre-Retrieval Optimization, reference #40: "Build Advanced Retrieval-Augmented Generation Systems")
+
+* **Recommended HF Resources for Demo #2**:
+  - **Paper**: "MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries"
+    - Link: https://hf.co/papers/2401.15391
+  - **Paper**: "BeamAggR: Beam Aggregation Reasoning over Multi-source Knowledge"
+    - Link: https://hf.co/papers/2406.19820
+  - **Paper**: "MINTQA: Multi-hop Question Answering on New and Tail Knowledge"
+    - Link: https://hf.co/papers/2412.17032
+  - **Embedding Model**: sentence-transformers/multi-qa-mpnet-base-dot-v1 (optimized for QA)
+    - Link: https://hf.co/sentence-transformers/multi-qa-mpnet-base-dot-v1
+
 ---
 
 ## **Demo #3: Hybrid Search - Combining Semantic and Keyword Retrieval**
@@ -131,6 +216,15 @@ This development plan outlines a progressive series of hands-on demonstrations f
 * **Relevant Citation(s)**:
   - Hybrid Search technique (Section: Advanced Retrieval Strategies, reference #9: "What is Retrieval-Augmented Generation (RAG)? | Google Cloud", reference #26: "Advanced RAG Implementation using Hybrid Search and Reranking")
   - Reciprocal Rank Fusion (reference #43: "Using Hybrid Search to Deliver Fast and Contextually Relevant Results")
+
+* **Recommended HF Resources for Demo #3**:
+  - **Model**: BAAI/bge-m3 - Native support for dense, sparse, and hybrid search
+    - Link: https://hf.co/BAAI/bge-m3
+    - Paper: https://hf.co/papers/2402.03216
+  - **Paper**: "Vietnamese Legal Information Retrieval" - RRF implementation example
+    - Link: https://hf.co/papers/2409.13699
+  - **Embedding Model**: sentence-transformers/all-mpnet-base-v2 for dense vectors
+    - Link: https://hf.co/sentence-transformers/all-mpnet-base-v2
 
 ---
 
@@ -185,6 +279,19 @@ This development plan outlines a progressive series of hands-on demonstrations f
 * **Relevant Citation(s)**:
   - Parent Document Retriever pattern (Section: Advanced Retrieval Strategies, reference #25: "How to use the Parent Document Retriever | LangChain", reference #46: "Parent-Child Chunking in LangChain for Advanced RAG")
 
+* **Recommended HF Resources for Demo #4**:
+  - **Paper**: "Rethinking Chunk Size For Long-Document Retrieval: Multi-Dataset Analysis"
+    - Optimal chunk sizes: 64-128 tokens (small), 512-1024 tokens (large)
+    - Link: https://hf.co/papers/2505.21700
+  - **Paper**: "Late Chunking: Contextual Chunk Embeddings Using Long-Context Models"
+    - Alternative approach for hierarchical context
+    - Link: https://hf.co/papers/2409.04701
+  - **Paper**: "Is Semantic Chunking Worth the Computational Cost?"
+    - Analysis of chunking effectiveness
+    - Link: https://hf.co/papers/2410.13070
+  - **Embedding Model**: Alibaba-NLP/gte-large-en-v1.5 for extended context (8192 tokens)
+    - Link: https://hf.co/Alibaba-NLP/gte-large-en-v1.5
+
 ---
 
 ## **Demo #5: Re-Ranking with Cross-Encoders - Post-Retrieval Refinement**
@@ -232,6 +339,18 @@ This development plan outlines a progressive series of hands-on demonstrations f
 
 * **Relevant Citation(s)**:
   - Re-ranking with Cross-Encoders (Section: Post-Retrieval Enhancement, reference #29: "Rerankers and Two-Stage Retrieval - Pinecone", reference #45: "Advanced RAG Optimization: Prioritize Knowledge with Reranking")
+
+* **Recommended HF Resources for Demo #5**:
+  - **Reranker Model**: cross-encoder/ms-marco-MiniLM-L6-v2 (4.9M downloads, most popular)
+    - Link: https://hf.co/cross-encoder/ms-marco-MiniLM-L6-v2
+  - **Reranker Model**: BAAI/bge-reranker-v2-m3 (multilingual, 2.6M downloads)
+    - Link: https://hf.co/BAAI/bge-reranker-v2-m3
+  - **Reranker Model**: Qwen/Qwen3-Reranker-0.6B (efficient, modern architecture)
+    - Link: https://hf.co/Qwen/Qwen3-Reranker-0.6B
+  - **Paper**: "Comparative Analysis of Lion and AdamW Optimizers for Cross-Encoder Reranking"
+    - Link: https://hf.co/papers/2506.18297
+  - **Paper**: "Incorporating Relevance Feedback for Information-Seeking Retrieval"
+    - Link: https://hf.co/papers/2210.10695
 
 ---
 
@@ -301,6 +420,15 @@ This development plan outlines a progressive series of hands-on demonstrations f
   - Strategic Reordering (reference #59: "Advanced RAG Series: Retrieval - Latest and Greatest")
   - Extractive Compression (Section: Post-Retrieval Enhancement, reference #16: "8 Retrieval Augmented Generation (RAG) Architectures", reference #60: "Mastering Advanced RAG Techniques")
 
+* **Recommended HF Resources for Demo #6**:
+  - **Paper**: "ChunkRAG: Novel LLM-Chunk Filtering Method for RAG Systems"
+    - Link: https://hf.co/papers/2410.19572
+  - **Paper**: "LaRA: Benchmarking RAG and Long-Context LLMs"
+    - Evaluates context length vs RAG effectiveness
+    - Link: https://hf.co/papers/2502.09977
+  - **Paper**: "Quantifying reliance on external information over parametric knowledge during RAG"
+    - Link: https://hf.co/papers/2410.00857
+
 ---
 
 ## **Demo #7: Corrective RAG (CRAG) - Self-Correcting Retrieval**
@@ -364,6 +492,17 @@ This development plan outlines a progressive series of hands-on demonstrations f
 
 * **Relevant Citation(s)**:
   - Corrective RAG (CRAG) (Section: The Frontier of RAG, reference #16: "8 Retrieval Augmented Generation (RAG) Architectures", reference #67: "Corrective Retrieval Augmented Generation - arXiv")
+
+* **Recommended HF Resources for Demo #7**:
+  - **Paper**: "CDF-RAG: Causal Dynamic Feedback for Adaptive RAG"
+    - Dynamic feedback and validation mechanisms
+    - Link: https://hf.co/papers/2504.12560
+  - **Paper**: "MBA-RAG: A Bandit Approach for Adaptive RAG"
+    - Reinforcement learning for adaptive retrieval
+    - Link: https://hf.co/papers/2412.01572
+  - **Paper**: "Finetune-RAG: Fine-Tuning to Resist Hallucination in RAG"
+    - Handling imperfect retrieval
+    - Link: https://hf.co/papers/2505.10792
 
 ---
 
@@ -584,6 +723,19 @@ This development plan outlines a progressive series of hands-on demonstrations f
 * **Relevant Citation(s)**:
   - Agentic RAG (Section: The Frontier of RAG, reference #34: "What is Agentic RAG | Weaviate", reference #62: "What is Agentic RAG? | IBM", reference #64: "Agentic RAG: How It Works, Use Cases, Comparison With RAG")
 
+* **Recommended HF Resources for Demo #8**:
+  - **Paper**: "Agentic Retrieval-Augmented Generation: A Survey on Agentic RAG"
+    - Comprehensive survey on agentic design patterns
+    - Link: https://hf.co/papers/2501.09136
+  - **Paper**: "GFM-RAG: Graph Foundation Model for RAG"
+    - Graph-based knowledge integration for complex reasoning
+    - Link: https://hf.co/papers/2502.01113
+  - **Paper**: "BeamAggR: Beam Aggregation Reasoning over Multi-source Knowledge"
+    - Multi-source knowledge integration techniques
+    - Link: https://hf.co/papers/2406.19820
+  - **Documentation**: Transformers RAG model documentation
+    - Link: https://huggingface.co/docs/transformers/model_doc/rag
+
 ---
 
 ## **Demo #9: Fine-Tuning the Embedding Model for Domain-Specific Retrieval**
@@ -648,6 +800,18 @@ This development plan outlines a progressive series of hands-on demonstrations f
 
 * **Relevant Citation(s)**:
   - Fine-Tuning the Retriever (Section: Fine-Tuning Components for Domain-Specific Excellence, reference #69: "Multi-task retriever fine-tuning for domain-specific and efficient RAG", reference #71: "ALoFTRAG: Automatic Local Fine Tuning for Retrieval Augmented Generation")
+
+* **Recommended HF Resources for Demo #9**:
+  - **Base Models for Fine-tuning**:
+    - sentence-transformers/all-MiniLM-L6-v2 (lightweight, fast training)
+      - Link: https://hf.co/sentence-transformers/all-MiniLM-L6-v2
+    - BAAI/bge-base-en-v1.5 (better performance, MTEB optimized)
+      - Link: https://hf.co/BAAI/bge-base-en-v1.5
+  - **Documentation**: Sentence Transformers Training Guide
+    - Link: https://huggingface.co/docs/hub/sentence-transformers
+  - **Example Fine-tuned Models**:
+    - datasocietyco/bge-base-en-v1.5-course-recommender-v5 (example domain adaptation)
+      - Link: https://hf.co/datasocietyco/bge-base-en-v1.5-course-recommender-v5
 
 ---
 
