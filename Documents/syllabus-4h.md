@@ -1,0 +1,17 @@
+### **Mastering RAG: A Half-Day Intensive Workshop**
+
+**Workshop Duration:** 4 Hours
+
+**Target Audience:** AI developers, data scientists, and software engineers aiming to build, optimize, and deploy robust RAG systems, from foundational to advanced levels.
+
+**Prerequisites:** A foundational understanding of Python and Large Language Models (LLMs) is recommended.
+
+-----
+
+| Time (Approx.) | Module | Topics Covered |
+| :--- | :--- | :--- |
+| **45 mins** | **Module 1: RAG Fundamentals & The Core Pipeline (Abridged)** | • **What is RAG & Why it Matters:** A quick overview of how RAG solves core LLM limitations like hallucinations and knowledge cutoffs. • **Core Pipeline Overview:** A brief walkthrough of the Ingestion, Retrieval, and Generation stages. • **Focus Area - Chunking Strategies:** A look at key methods for preparing data, including Fixed-Size, Recursive, and Semantic chunking. • **Focus Area - Retrieval Methods:** A comparison of Sparse (BM25), Dense (Vector), and the powerful Hybrid Search approach. |
+| **45 mins** | **Module 2: Optimizing the Pipeline & Handling Multimodality** | • **Post-Retrieval Optimization:** Briefly covering the importance of re-ranking to improve precision. • **Context Compression:** A short explanation of its purpose (cost, latency, "lost in the middle") and methods. • **Special Topic - Incorporating Images & Graphs:**   - **Multimodal RAG:** Handling images by generating text summaries or using multimodal embeddings (e.g., CLIP).   - **Introduction to Knowledge Graphs:** A primer on using structured graph data to enhance retrieval, leading into the next module. |
+| **60 mins** | **Module 3: Advanced Architecture I - GraphRAG** | • **From Unstructured Text to Structured Knowledge:** Understanding what Knowledge Graphs are (nodes, edges, relationships) and how LLMs can help build them. • **Why GraphRAG?** Exploring the key benefits: capturing explicit relationships, enabling multi-hop reasoning for complex questions, and improving explainability. • **GraphRAG Architecture:** A breakdown of the core components (Query Processor, Retriever, Organizer, Generator) and how they work together. |
+| **45 mins** | **Module 4: Advanced Architecture II - Agentic & Deep Research RAG** | • **The Autonomous Frontier:** Defining Agentic RAG as a shift from a static pipeline to a dynamic, LLM-orchestrated process. • **Agentic Patterns:** Understanding the roles of different agents, including Routing (for multi-source data), Query Planning, and ReAct (Reason-Act). • **Deep Research Architectures:** How agents enable iterative reasoning to decompose and solve complex questions that are impossible for single-pass RAG systems. |
+| **30 mins** | **Module 5: Production-Ready RAG: Evaluation & Best Practices** | • **Evaluation-Driven Development:** The importance of establishing a rigorous, automated testing framework. • **Key RAG Metrics:** Measuring Retrieval (Context Precision/Recall) and Generation (Faithfulness, Answer Relevance). • **Overview of Evaluation Frameworks:** A brief look at popular tools like RAGAS, DeepEval, and TruLens. • **Common Failure Modes & Workshop Wrap-up:** Identifying and mitigating common issues, followed by a final Q&A session. |
