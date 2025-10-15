@@ -201,6 +201,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
 * **Relevant Citation(s)**:
   - Parent Document Retriever pattern (Section: Advanced Retrieval Strategies, reference #25: "How to use the Parent Document Retriever | LangChain", reference #46: "Parent-Child Chunking in LangChain for Advanced RAG")
 
+* **Status**: [COMPLETED]
+* **File Generated**: demo_04_hierarchical_retrieval.ipynb
+* **Completion Date**: 2025-10-15
+* **Notes**: Successfully implemented hierarchical (parent-child) chunking strategy with custom ParentDocumentRetriever. Created two additional long-form documents (advanced_chunking_strategies.md and embedding_models_deep_dive.md) to complement the existing rag_comprehensive_guide.md. The notebook demonstrates all three baseline approaches (medium chunks, small chunks) and the hierarchical approach with comprehensive comparisons. Parent chunks are 1024 tokens (context-rich), child chunks are 256 tokens (precise retrieval). Implemented custom retriever that searches over child embeddings but returns parent chunks to the LLM. Includes detailed data flow visualization and comparative evaluation across multiple test queries. All implementation steps from the plan were executed as specified.
+
 ---
 
 ## **Demo #5: Re-Ranking with Cross-Encoders - Post-Retrieval Refinement**
@@ -248,6 +253,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
 
 * **Relevant Citation(s)**:
   - Re-ranking with Cross-Encoders (Section: Post-Retrieval Enhancement, reference #29: "Rerankers and Two-Stage Retrieval - Pinecone", reference #45: "Advanced RAG Optimization: Prioritize Knowledge with Reranking")
+
+* **Status**: [COMPLETED]
+* **File Generated**: demo_05_reranking_cross_encoders.ipynb
+* **Completion Date**: 2025-10-15
+* **Notes**: Successfully implemented two-stage retrieval with cross-encoder re-ranking. Used open-source cross-encoder model (`cross-encoder/ms-marco-MiniLM-L-6-v2`) via custom BaseNodePostprocessor implementation. Combined the ML concepts and tech docs datasets (11 documents total) to create scenarios with topically similar but semantically distinct content. Notebook includes comprehensive comparison between bi-encoder-only (top-20 → top-5) and two-stage retrieval (top-20 → cross-encoder re-rank → top-5), detailed visualization of rank changes, LLM-as-judge evaluation of answer quality, and testing across multiple diverse queries. Implemented custom CrossEncoderReranker class that processes [query, document] pairs jointly for accurate relevance scoring. All implementation steps from the plan were executed as specified.
 
 ---
 
@@ -317,6 +327,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
   - Strategic Reordering (reference #59: "Advanced RAG Series: Retrieval - Latest and Greatest")
   - Extractive Compression (Section: Post-Retrieval Enhancement, reference #16: "8 Retrieval Augmented Generation (RAG) Architectures", reference #60: "Mastering Advanced RAG Techniques")
 
+* **Status**: [COMPLETED]
+* **File Generated**: demo_06_context_compression.ipynb
+* **Completion Date**: 2025-10-15
+* **Notes**: Successfully implemented context compression and strategic reordering to address the "lost in the middle" problem. Created custom SentenceCompressionProcessor that performs sentence-level pruning by embedding and scoring each sentence against the query, keeping top 50% of sentences. Implemented StrategicReorderProcessor that places the most relevant chunk at the start and second-most relevant at the end, with remaining chunks in the middle. Combined all datasets (ML + Tech + Long-form = 14 documents) to create scenarios with 15 retrieved chunks. Notebook includes comprehensive comparison across three approaches (baseline, reordered, compressed+reordered), detailed visualizations showing attention patterns, token count analysis demonstrating 30-50% reduction, and LLM-as-judge evaluation. Demonstrated optimal pipeline: Compression → Reordering for maximum efficiency and quality. All implementation steps from the plan were executed as specified.
+
 ---
 
 ## **Demo #7: Corrective RAG (CRAG) - Self-Correcting Retrieval**
@@ -380,6 +395,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
 
 * **Relevant Citation(s)**:
   - Corrective RAG (CRAG) (Section: The Frontier of RAG, reference #16: "8 Retrieval Augmented Generation (RAG) Architectures", reference #67: "Corrective Retrieval Augmented Generation - arXiv")
+
+* **Status**: [COMPLETED]
+* **File Generated**: demo_07_corrective_rag.ipynb
+* **Completion Date**: 2025-10-15
+* **Notes**: Successfully implemented Corrective RAG (CRAG) with self-evaluation and dynamic routing. Created custom CorrectiveRAGEngine class that evaluates retrieval quality using LLM-as-judge, assigns confidence scores (0-1), and routes queries based on thresholds (HIGH >0.7, AMBIGUOUS 0.4-0.7, LOW <0.4). Implemented mock web search fallback function that simulates external knowledge sources (in production, would integrate with Bing/Google Search API). Used only ML concepts knowledge base (5 documents) to create a deliberately limited KB for testing. Demonstrated three scenarios: (1) In-domain query about neural networks (HIGH confidence → Internal KB), (2) Out-of-domain query about climate change (LOW confidence → Web Search), (3) Ambiguous query about ML + quantum computing (AMBIGUOUS confidence → Hybrid). Included comprehensive comparison with naive RAG showing how CRAG prevents hallucinations and handles knowledge gaps. Added visualizations showing confidence scores and routing distributions. All implementation steps from the plan were executed as specified.
 
 ---
 
@@ -468,6 +488,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
 
 * **Relevant Citation(s)**:
   - Agentic RAG (Section: The Frontier of RAG, reference #34: "What is Agentic RAG | Weaviate", reference #62: "What is Agentic RAG? | IBM", reference #64: "Agentic RAG: How It Works, Use Cases, Comparison With RAG")
+
+* **Status**: [COMPLETED]
+* **File Generated**: demo_08_agentic_rag.ipynb
+* **Completion Date**: 2025-10-15
+* **Notes**: Successfully implemented Agentic RAG using ReActAgent from llama-index. Created two distinct knowledge bases: ML concepts (5 documents) and Finance (5 documents: portfolio_diversification.md, reinforcement_learning_finance.md, risk_management.md, quantitative_trading.md, market_analysis.md). Implemented QueryEngineTool wrappers for each domain with descriptive metadata to guide agent tool selection. Notebook demonstrates three progressive test scenarios: (1) Simple single-domain query about gradient boosting (agent uses ML tool only), (2) Cross-domain query about ML applications in finance (agent uses both tools), (3) Complex multi-hop query comparing RL vs traditional diversification with risk metrics (agent performs multi-step reasoning across both domains). Included comprehensive comparison with static RAG baseline (combined index) showing how agentic approach guarantees coverage of all relevant domains through intelligent tool selection and iterative retrieval. Added workflow visualizations showing the Thought→Action→Observation loop, extensive discussion of when to use agentic vs static RAG, limitations and mitigation strategies, and extensions for advanced patterns (sub-agents, memory, custom tools). All implementation steps from the plan were executed as specified. The verbose mode successfully displays the agent's reasoning process for educational purposes.
 
 ---
 
