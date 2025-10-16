@@ -120,6 +120,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
   - **Embedding Model**: BAAI/bge-base-en-v1.5 for better accuracy
     - Link: https://hf.co/BAAI/bge-base-en-v1.5
 
+* **Status**: [COMPLETED]
+* **File Generated**: demo_01_hyde_query_enhancement.ipynb
+* **Completion Date**: 2025-10-15
+* **Notes**: Successfully implemented HyDE query enhancement with comprehensive comparisons between baseline and HyDE-enhanced retrieval. The notebook includes detailed data flow visualization, multiple test cases, and clear explanations of the answer-to-answer similarity paradigm. All implementation steps from the plan were executed faithfully, including transparent display of the generated hypothetical documents.
+
 ---
 
 ## **Demo #2: Multi-Query Decomposition - Complex Query Handling**
@@ -170,6 +175,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
     - Link: https://hf.co/papers/2412.17032
   - **Embedding Model**: sentence-transformers/multi-qa-mpnet-base-dot-v1 (optimized for QA)
     - Link: https://hf.co/sentence-transformers/multi-qa-mpnet-base-dot-v1
+
+* **Status**: [COMPLETED]
+* **File Generated**: demo_02_multi_query_decomposition.ipynb
+* **Completion Date**: 2025-10-15
+* **Notes**: Successfully implemented multi-query decomposition using SubQuestionQueryEngine. The notebook demonstrates automatic decomposition of complex queries into focused sub-questions with parallel retrieval and synthesis. Includes comprehensive comparison with baseline single-query approach, performance analysis, and multiple test cases showing effectiveness for comparison and multi-aspect queries. All implementation steps faithfully executed including verbose output for transparency.
 
 ---
 
@@ -225,6 +235,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
     - Link: https://hf.co/papers/2409.13699
   - **Embedding Model**: sentence-transformers/all-mpnet-base-v2 for dense vectors
     - Link: https://hf.co/sentence-transformers/all-mpnet-base-v2
+
+* **Status**: [COMPLETED]
+* **File Generated**: demo_03_hybrid_search.ipynb
+* **Completion Date**: 2025-10-15
+* **Notes**: Successfully implemented hybrid search combining dense vector search with BM25 sparse retrieval using QueryFusionRetriever with Reciprocal Rank Fusion. The notebook demonstrates comprehensive comparisons across three query types (exact term match, conceptual, and mixed queries) showing the effectiveness of each approach. Includes detailed RRF explanation with mathematical formulas, data flow visualization, and performance analysis. All implementation steps from the plan were faithfully executed.
 
 ---
 
@@ -292,6 +307,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
   - **Embedding Model**: Alibaba-NLP/gte-large-en-v1.5 for extended context (8192 tokens)
     - Link: https://hf.co/Alibaba-NLP/gte-large-en-v1.5
 
+* **Status**: [COMPLETED]
+* **File Generated**: demo_04_hierarchical_retrieval.ipynb
+* **Completion Date**: 2025-10-16
+* **Notes**: Successfully implemented hierarchical retrieval with Parent-Child chunking pattern. The notebook demonstrates custom ParentDocumentRetriever that searches child nodes (256 tokens) for precise retrieval while returning parent nodes (1024 tokens) for rich context. Includes comprehensive comparison across three chunking strategies (small, medium, hierarchical) showing how hierarchical approach solves the precision vs. context trade-off. All implementation steps from the plan were faithfully executed including document store setup, parent-child linking, and detailed architecture visualization.
+
 ---
 
 ## **Demo #5: Re-Ranking with Cross-Encoders - Post-Retrieval Refinement**
@@ -351,6 +371,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
     - Link: https://hf.co/papers/2506.18297
   - **Paper**: "Incorporating Relevance Feedback for Information-Seeking Retrieval"
     - Link: https://hf.co/papers/2210.10695
+
+* **Status**: [COMPLETED]
+* **File Generated**: demo_05_reranking_cross_encoders.ipynb
+* **Completion Date**: 2025-10-16
+* **Notes**: Successfully implemented two-stage retrieval with bi-encoder (Azure OpenAI embeddings) for fast initial retrieval and cross-encoder (cross-encoder/ms-marco-MiniLM-L6-v2) for precise re-ranking. The notebook includes custom CrossEncoderReranker postprocessor, comprehensive architectural explanation comparing bi-encoders and cross-encoders, performance benchmarking, and detailed visualization of rank changes. Demonstrates how re-ranking improves precision while maintaining acceptable latency. All implementation steps from the plan were faithfully executed.
 
 ---
 
@@ -429,6 +454,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
   - **Paper**: "Quantifying reliance on external information over parametric knowledge during RAG"
     - Link: https://hf.co/papers/2410.00857
 
+* **Status**: [COMPLETED]
+* **File Generated**: demo_06_context_compression.ipynb
+* **Completion Date**: 2025-10-16
+* **Notes**: Successfully implemented context compression with both strategic reordering (LongContextReorder) and extractive sentence-level compression. The notebook demonstrates the "lost in the middle" problem with empirical evidence, custom SentenceLevelCompressor implementation that filters low-relevance sentences, and combined strategy achieving 30-40% token reduction. Includes comprehensive visualizations of LLM attention patterns, detailed data flow diagrams, and production-ready implementation guidelines. All steps faithfully executed including both postprocessors applied in optimal sequence (compress then reorder).
+
 ---
 
 ## **Demo #7: Corrective RAG (CRAG) - Self-Correcting Retrieval**
@@ -503,6 +533,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
   - **Paper**: "Finetune-RAG: Fine-Tuning to Resist Hallucination in RAG"
     - Handling imperfect retrieval
     - Link: https://hf.co/papers/2505.10792
+
+* **Status**: [COMPLETED]
+* **File Generated**: demo_07_corrective_rag.ipynb
+* **Completion Date**: 2025-10-16
+* **Notes**: Successfully implemented Corrective RAG (CRAG) with comprehensive self-evaluation mechanism. The notebook demonstrates LLM-based retrieval evaluator that scores confidence (0-1), dynamic routing across three pathways (high/low/ambiguous confidence), web search fallback using DuckDuckGo, and optional sentence-level knowledge filtering. Includes three test scenarios (in-domain, out-of-domain, ambiguous) with detailed comparison against baseline RAG showing the benefits of self-correction. All implementation steps from the plan were faithfully executed including the complete decision flow visualization.
 
 ---
 
@@ -736,6 +771,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
   - **Documentation**: Transformers RAG model documentation
     - Link: https://huggingface.co/docs/transformers/model_doc/rag
 
+* **Status**: [COMPLETED]
+* **File Generated**: demo_08_agentic_rag.ipynb
+* **Completion Date**: 2025-10-16
+* **Notes**: Successfully implemented Agentic RAG using ReAct framework with comprehensive tool orchestration. The notebook demonstrates autonomous agent with 5 tools (ML KB, Finance KB, DuckDuckGo search, arXiv search, arXiv fetch), progressive query complexity testing from simple single-domain to complex multi-hop research queries, and transparent reasoning traces showing Thought-Action-Observation loops. Includes detailed comparison with static RAG showing adaptability advantages, complete architecture visualization, and production considerations. All implementation steps from the plan were faithfully executed with max_iterations=10 for complex multi-step research tasks.
+
 ---
 
 ## **Demo #9: Fine-Tuning the Embedding Model for Domain-Specific Retrieval**
@@ -812,6 +852,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
   - **Example Fine-tuned Models**:
     - datasocietyco/bge-base-en-v1.5-course-recommender-v5 (example domain adaptation)
       - Link: https://hf.co/datasocietyco/bge-base-en-v1.5-course-recommender-v5
+
+* **Status**: [COMPLETED]
+* **File Generated**: demo_09_embedding_finetuning.ipynb
+* **Completion Date**: 2025-10-16
+* **Notes**: Successfully implemented embedding model fine-tuning for domain-specific retrieval using sentence-transformers. The notebook demonstrates complete workflow from creating query-passage triplets, applying contrastive learning with Triplet Loss, comprehensive evaluation with Recall@K and MRR metrics, and complete RAG system comparison showing improved answer quality. Includes 20+ training triplets, 6 test queries with ground truth judgments, embedding space visualization, and mathematical explanation of triplet loss. All implementation steps from the plan were faithfully executed with practical considerations for production deployment.
 
 ---
 
@@ -899,6 +944,11 @@ This development plan outlines a progressive series of hands-on demonstrations f
 * **Relevant Citation(s)**:
   - RAG Evaluation Metrics (Section: Practical Implementation, reference #84: "RAG Evaluation Metrics Guide", reference #86: "RAG Evaluation Metrics: Assessing Answer Relevancy, Faithfulness")
   - RAGAS Framework (reference #89: "Best 9 RAG Evaluation Tools of 2025")
+
+* **Status**: [COMPLETED]
+* **File Generated**: demo_10_rag_evaluation.ipynb
+* **Completion Date**: 2025-10-16
+* **Notes**: Successfully implemented comprehensive RAG evaluation framework using RAGAS with all four core metrics (Context Precision, Context Recall, Faithfulness, Answer Relevancy). The notebook demonstrates complete evaluation workflow from test set creation, LLM-as-judge pattern implementation, per-question failure mode analysis, iterative improvement recommendations, and production-ready evaluation strategies. Includes 6 test questions with ground truth, aggregate and per-question metrics, radar and bar chart visualizations, automated bottleneck identification with specific improvement recommendations mapped to previous demos, and detailed cost/performance considerations. All implementation steps from the plan were faithfully executed with complete export functionality for reporting and monitoring.
 
 ---
 
