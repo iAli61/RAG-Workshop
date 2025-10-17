@@ -1,0 +1,28 @@
+
+RAG SYSTEM EVALUATION REPORT
+============================
+
+Evaluation Date: 2025-10-16 14:15:02
+Test Questions: 6
+
+AGGREGATE METRICS
+-----------------
+Context Precision:  0.833
+Context Recall:     0.944
+Faithfulness:       0.934
+Answer Relevancy:   0.967
+
+Overall Score:      0.920
+
+PRIMARY BOTTLENECK
+------------------
+Context Precision: 0.833
+
+QUESTIONS BELOW THRESHOLD (0.7)
+--------------------------------
+Low Context Precision:  1
+Low Context Recall:     1
+Low Faithfulness:       0
+Low Answer Relevancy:   0
+
+See rag_evaluation_detailed.csv for per-question analysis.

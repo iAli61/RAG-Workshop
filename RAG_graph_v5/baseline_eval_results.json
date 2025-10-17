@@ -1,0 +1,89 @@
+{
+  "system_name": "Baseline RAG",
+  "evaluation_date": "2025-10-16",
+  "aggregate_metrics": {
+    "Avg Context Relevance": 0.5166666666666667,
+    "Avg Context Sufficiency": 0.8,
+    "Avg Faithfulness": 0.5,
+    "Avg Answer Relevance": 0.95,
+    "Avg Correctness": 0.8641106498177841,
+    "Avg Overall Score": 0.728527662454446
+  },
+  "detailed_results": [
+    {
+      "query": "What is the transformer architecture?",
+      "query_type": "conceptual",
+      "difficulty": "easy",
+      "metrics": {
+        "context_relevance": 0.5833333333333334,
+        "context_sufficiency": 1.0,
+        "answer_faithfulness": 0.5,
+        "answer_relevance": 1.0,
+        "answer_correctness": 0.8321661336698735,
+        "overall_score": 0.7705415334174683
+      },
+      "generated_answer": "The transformer architecture is a deep learning model that revolutionized natural language processing by using an attention-based mechanism instead of the sequential processing found in RNNs and LSTMs. It allows for parallel processing of sequences and effectively captures long-range dependencies. Key components include self-attention mechanisms, multi-head attention, position encodings, and feed-forward networks. The architecture consists of an encoder and a decoder, each with multiple layers that incorporate attention, normalization, and residual connections. Transformers offer advantages such as parallelization, efficient handling of long-range dependencies, and computational efficiency, making them suitable for various applications beyond NLP, including computer vision and speech processing.",
+      "num_retrieved_chunks": 3
+    },
+    {
+      "query": "How does BERT differ from GPT-4?",
+      "query_type": "comparison",
+      "difficulty": "medium",
+      "metrics": {
+        "context_relevance": 0.5833333333333334,
+        "context_sufficiency": 0.5,
+        "answer_faithfulness": 0.5,
+        "answer_relevance": 1.0,
+        "answer_correctness": 0.6855687951978751,
+        "overall_score": 0.6588921987994687
+      },
+      "generated_answer": "BERT and GPT-4 differ primarily in their design and capabilities. BERT is a bidirectional encoder model that processes text in both directions simultaneously, focusing on understanding and extracting information from text. It excels in tasks like question answering, named entity recognition, and sentiment analysis. GPT-4, on the other hand, is a multimodal model that can handle both text and image inputs, generating text outputs. It is designed for tasks requiring creative writing, complex problem solving, and code generation. Additionally, GPT-4 incorporates advanced reasoning and safety measures, while BERT is known for its bidirectional training approach and fine-tuning capabilities for specific tasks.",
+      "num_retrieved_chunks": 3
+    },
+    {
+      "query": "Explain how embeddings work in machine learning",
+      "query_type": "conceptual",
+      "difficulty": "easy",
+      "metrics": {
+        "context_relevance": 0.6666666666666666,
+        "context_sufficiency": 1.0,
+        "answer_faithfulness": 0.5,
+        "answer_relevance": 1.0,
+        "answer_correctness": 0.9888300798852989,
+        "overall_score": 0.8222075199713247
+      },
+      "generated_answer": "Embeddings in machine learning are dense vector representations that transform discrete objects, such as words or images, into a continuous, low-dimensional space. This transformation captures semantic meaning, allowing objects with similar meanings to have similar vector representations. By converting high-dimensional, sparse data into compact vectors, embeddings facilitate tasks like semantic similarity and recommendation systems. They are particularly useful in natural language processing, where they can reflect relationships through vector arithmetic, such as the analogy \"king\" - \"man\" + \"woman\" \u2248 \"queen\". Different types of embeddings, such as word embeddings and contextualized embeddings, offer various methods to capture and utilize semantic information effectively.",
+      "num_retrieved_chunks": 3
+    },
+    {
+      "query": "What are the key components of a REST API and how do they relate to Docker containers?",
+      "query_type": "multi-hop",
+      "difficulty": "hard",
+      "metrics": {
+        "context_relevance": 0.3333333333333333,
+        "context_sufficiency": 0.5,
+        "answer_faithfulness": 0.5,
+        "answer_relevance": 0.75,
+        "answer_correctness": 0.8244909993475316,
+        "overall_score": 0.6061227498368829
+      },
+      "generated_answer": "The key components of a REST API include client-server architecture, statelessness, cacheability, uniform interface, and layered system. These components ensure that REST APIs are scalable, efficient, and easy to interact with. In relation to Docker containers, both REST APIs and Docker containers emphasize scalability and efficiency. Docker containers provide isolated environments for applications, which can be beneficial for deploying REST APIs as they allow for consistent and portable application environments. Additionally, Docker's use of images and containers aligns with the stateless nature of REST APIs, as containers can be ephemeral and stateless, similar to how REST APIs handle requests independently without storing client context. Both technologies support scalability and flexibility, making them suitable for modern web services and applications.",
+      "num_retrieved_chunks": 3
+    },
+    {
+      "query": "What is Docker?",
+      "query_type": "factual",
+      "difficulty": "easy",
+      "metrics": {
+        "context_relevance": 0.4166666666666667,
+        "context_sufficiency": 1.0,
+        "answer_faithfulness": 0.5,
+        "answer_relevance": 1.0,
+        "answer_correctness": 0.9894972409883416,
+        "overall_score": 0.7848743102470854
+      },
+      "generated_answer": "Docker is a platform designed for developing, shipping, and running applications within isolated environments known as containers. These containers package application code along with all necessary dependencies, ensuring consistent performance across various computing environments. Docker's architecture includes components like the Docker Engine, which manages containers, and utilizes images as templates for creating container instances.",
+      "num_retrieved_chunks": 3
+    }
+  ]
+}

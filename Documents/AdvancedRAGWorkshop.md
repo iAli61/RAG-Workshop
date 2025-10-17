@@ -390,3 +390,4 @@ Ultimately, the successful deployment of any RAG system, from the simplest to th
 76. RAG Evaluation: Don't let customers tell you first \- Pinecone, accessed October 15, 2025, [https://www.pinecone.io/learn/series/vector-databases-in-production-for-busy-engineers/rag-evaluation/](https://www.pinecone.io/learn/series/vector-databases-in-production-for-busy-engineers/rag-evaluation/)  
 77. RAG Evaluation Survey: Framework, Metrics, and Methods | EvalScope \- Read the Docs, accessed October 15, 2025, [https://evalscope.readthedocs.io/en/latest/blog/RAG/RAG\_Evaluation.html](https://evalscope.readthedocs.io/en/latest/blog/RAG/RAG_Evaluation.html)  
 78. Top Problems with RAG systems and ways to mitigate them \- AIMon ..., accessed October 15, 2025, [https://www.aimon.ai/posts/top\_problems\_with\_rag\_systems\_and\_ways\_to\_mitigate\_them/](https://www.aimon.ai/posts/top_problems_with_rag_systems_and_ways_to_mitigate_them/)
+
